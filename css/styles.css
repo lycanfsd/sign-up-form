@@ -1,12 +1,36 @@
+@font-face {
+    font-family: 'Luminari';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Luminari'), url('../css/Luminari-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Cardo';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Cardo'), url('../css/Cardo-Regular.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    
 * {
     margin: 0px;
     padding: 0px;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Cardo', Helvetica, sans-serif;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: whitesmoke;
+}
+
+:root { 
+    --background: rgb(49, 31, 37);
+    --formbanner: #4e323b;
+    --button: #b54f33;
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: var(--background);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -14,13 +38,14 @@ body {
 }
 
 .left {
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/background.gif);
     min-height: 100vh;
     min-width: 40vw;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -33,18 +58,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3%;
+    padding: 0.5%;
     overflow: hidden;
+}
+
+#img-credit {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    font-size: small;
 }
 
 .logo-txt {
     color: whitesmoke;
     order: 1;
-    font-size: xxx-large;
+    font-size: 4vw;
+    font-family: 'Luminari', Helvetica, sans-serif;
 }
 
 .logo {
-    width: 5rem;
+    width: 8vw;
     height: auto;
     order: 0;
     margin-right: 10px;
@@ -60,12 +94,14 @@ body {
 }
 
 .form-banner {
-    background-color: white;
+    background-color: var(--formbanner);
     width: 60%;
     width: 100%;
     height: auto;
     padding: 3%;
-    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
+    border-top: solid whitesmoke 1px;
+    border-bottom: solid whitesmoke 1px;
 }
 
 .form-banner > h2 {
@@ -73,12 +109,13 @@ body {
 }
 
 h2 {
-    font-size: calc(5px + 1.5vw);
+    font-size: calc(2px + 1.5vw);
     font-weight:600;
 }
 
 .description {
     margin: 0px 40px 0px 2.2%;
+    text-shadow: black 1px 1px 1px;
 }
 
 #call-to-action {
@@ -102,8 +139,25 @@ h2 {
 }
 
 #Sign-up > .left-form > input, #Sign-up > .right-form > input {
+    border: solid grey 1px;
     margin-bottom: 20px;
     width: 15vw;
+    background-color: antiquewhite;
+    color: black;
+}
+
+#Sign-up > .left-form > input:focus, #Sign-up > .right-form > input:focus {
+    border: solid var(--button) 2px !important;
+    box-shadow: black 1px 1px 5px;
+    outline: none;
+}
+
+#Sign-up > .left-form > input:valid, #Sign-up > .right-form > input:valid {
+    border-color: green;
+}
+
+#Sign-up > .left-form > input:invalid, #Sign-up > .right-form > input:invalid {
+    border-color: grey;
 }
 
 .buttons {
@@ -116,11 +170,11 @@ h2 {
     width: 90%;
     height: auto;
     margin-bottom: 20px;
-    background-color: #596D48;
+    background-color: var(--button);
     color: whitesmoke;
     border-radius: 7px;
     border: none;
-    
+    font-size: calc(1rem + 0.1vw);
 }
 
 .log-in {
@@ -130,7 +184,7 @@ h2 {
 }
 
 a {
-    color: #596D48;
+    color: var(--button);
     text-decoration: none;
     font-weight: bold;
 }
