@@ -63,7 +63,7 @@ body {
 }
 
 #img-credit {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     margin-bottom: 10px;
     color: whitesmoke;
@@ -95,7 +95,6 @@ body {
 
 .form-banner {
     background-color: var(--formbanner);
-    width: 60%;
     width: 100%;
     height: auto;
     padding: 3%;
@@ -196,4 +195,129 @@ a {
 
 a:hover {
     transform: scale(1.05);
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        min-height: 50vw;
+        min-width: 30vw;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .form-banner > input {
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+        padding: 4%;
+        overflow: hidden;
+        box-shadow: black 1px 1px 10px;
+    }
+
+    .banner {
+        height: auto;
+        width: 100%;
+        background:none;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4%;
+        overflow: hidden;
+        box-shadow: black 1px 1px 10px;
+    }
+
+    #img-credit {
+        visibility: hidden;
+    }
+
+    .logo-txt {
+        font-size: 7vw;
+    }
+    
+    .logo {
+        width: 10vw;
+        height: auto;
+        order: 0;
+        margin-right: 10px;
+    }
+
+    .description {
+        margin: 0px 15px 0px 15px;
+        text-shadow: black 1px 1px 1px;
+        font-size: calc(15px + 1.5vw);
+        font-weight:600;
+        text-align: center;
+    }
+
+    .form-banner > h2 {
+        font-size: calc(15px + 1.5vw);
+        text-align: center;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin-top: 4vw;
+        min-height: auto;
+    }
+
+    .form-banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #Sign-up {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+    }
+    
+    #Sign-up > .left-form > input, #Sign-up > .right-form > input {
+        border: solid grey 1px;
+        margin-bottom: 20px;
+        width: 35vw;
+        background-color: antiquewhite;
+        color: black;
+    }
+    
+    .buttons {
+        margin: 30px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #create-account-btn {
+        width: 120%;
+    }
+    
+    .log-in {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        font-size: 3vw;
+    }
+    
+    a {
+        color: var(--button);
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
 }
